@@ -45,14 +45,23 @@ class YouTubeImportController(BaseSettingsController):
         categories = kwargs.get('youtube.categories')
         user = request.environ['repoze.who.identity']['user']
         
-        channel_names = youtube.get('channel_names', '').replace(',', ' ').split()
-        importer = YouTubeImporter(auto_publish, user, tags, categories)
-        try:
-            for channel_name in channel_names:
+        def channel_names_from_input(channel_string):
+            channel_names = []
+            for name in channel_string.replace(',', ' ').split():
                 # YouTube only allows ASCII letters, digits and dots but other
                 # software might insert invisible characters (e.g. u'\u202a',
                 # unicode "left-to-right embedding").
-                channel_name = re.sub('[^a-zA-Z0-9\.]', '', channel_name)
+                channel_name = re.sub('[^a-zA-Z0-9\.]', '', name)
+                if channel_name == '':
+                    # ignore empty lines
+                    continue
+                channel_names.append(channel_name)
+            return channel_names
+        
+        channel_names = channel_names_from_input(youtube.get('channel_names', ''))
+        importer = YouTubeImporter(auto_publish, user, tags, categories)
+        try:
+            for channel_name in channel_names:
                 log.debug('importing videos from YouTube channel %r' % channel_name)
                 importer.import_videos_from_channel(channel_name)
         except RequestError, request_error:
