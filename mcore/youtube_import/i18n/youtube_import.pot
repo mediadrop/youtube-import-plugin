@@ -1,0 +1,73 @@
+# Translations template for YouTubeImportMC.
+# Copyright (C) 2012 ORGANIZATION
+# This file is distributed under the same license as the YouTubeImportMC
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: YouTubeImportMC 0.6\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2012-08-16 15:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 1.0dev-r0\n"
+
+#: mcore/youtube_import/admin/controller.py:61
+msgid ""
+"You have exceeded the traffic quota allowed \n"
+"by YouTube. While some of the videos have been saved, not all of them were \n"
+"imported correctly. Please wait a few minutes and run the import again to \n"
+"continue."
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:28
+msgid "Channel Name(s)"
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:29
+msgid ""
+"One or more channel names (separated by commas) to import. Please enter only "
+"the channel/user name, not the full URL. Please be aware that it may take "
+"several minutes for the import to complete. When all videos have been "
+"imported, you will be returned to the Media page to manage your new videos."
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:32
+msgid "Publish Videos"
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:33
+msgid ""
+"When this is selected, videos are published automatically when they are "
+"imported. Otherwise the videos will be added, but will be waiting for review "
+"before being published."
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:35
+msgid "Categories"
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:37
+msgid "Tags"
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:38
+msgid "e.g.: puppies, great dane, adorable"
+msgstr ""
+
+#: mcore/youtube_import/admin/forms.py:39
+msgid "Import"
+msgstr ""
+
+#: mcore/youtube_import/admin/routes_.py:32
+#: mcore/youtube_import/templates/admin/import.html:16
+#: mcore/youtube_import/templates/admin/import.html:22
+msgid "YouTube Import"
+msgstr ""
+

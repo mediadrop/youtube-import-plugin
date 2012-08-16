@@ -20,6 +20,10 @@ setup(
           'mediacore.plugin': [
               'youtube_import = mcore.youtube_import.mediacore_plugin',
           ],
-      }
+      },
+      message_extractors = {'mcore/youtube_import': [
+          ('**.py', 'python', None),
+          ('templates/**.html', 'genshi', {'template_class': 'genshi.template.markup:MarkupTemplate'}),
+      ]},
 )
 
