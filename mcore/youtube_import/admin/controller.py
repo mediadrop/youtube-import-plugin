@@ -8,7 +8,7 @@ import re
 import logging
 
 from gdata.service import RequestError
-from pylons import request
+from pylons import request, tmpl_context as c
 
 from mediacore.lib.base import BaseSettingsController
 from mediacore.lib.decorators import autocommit, expose, validate
@@ -61,7 +61,7 @@ class YouTubeImportController(BaseSettingsController):
             error_message = _(u'''You have exceeded the traffic quota allowed 
 by YouTube. While some of the videos have been saved, not all of them were 
 imported correctly. Please wait a few minutes and run the import again to 
-continue.''', domain=gettext_domain)
+continue.''')
             c.form_errors['_the_form'] = error_message
             return self.index(youtube=youtube, **kwargs)
         
