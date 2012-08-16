@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='YouTubeImportMC',
+    name='MCYouTubeImport',
     version='0.6',
     
     author='Felix Schwarz',
