@@ -4,7 +4,6 @@
 # your option any later version).
 # See LICENSE.txt in the main project directory for more information.
 
-import re
 import logging
 
 from gdata.service import RequestError
@@ -16,7 +15,7 @@ from mediacore.lib.helpers import redirect, url_for
 from mediacore.model import Category
 
 from mcore.youtube_import.admin.forms import *
-from mcore.youtube_import.core import YouTubeImporter
+from mcore.youtube_import.core import parse_channel_names, YouTubeImporter
 from mcore.youtube_import.util import _
 
 
@@ -40,25 +39,12 @@ class YouTubeImportController(BaseSettingsController):
     @validate(import_form, error_handler=index)
     @autocommit
     def perform_import(self, youtube, **kwargs):
-        auto_publish = youtube.get('auto_publish', None)
+        auto_publish = youtube.get('auto_publish', False)
+        user = request.environ['repoze.who.identity']['user']
         tags = kwargs.get('youtube.tags')
         categories = kwargs.get('youtube.categories')
-        user = request.environ['repoze.who.identity']['user']
         
-        def channel_names_from_input(channel_string):
-            channel_names = []
-            for name in channel_string.replace(',', ' ').split():
-                # YouTube only allows ASCII letters, digits and dots but other
-                # software might insert invisible characters (e.g. u'\u202a',
-                # unicode "left-to-right embedding").
-                channel_name = re.sub('[^a-zA-Z0-9\.]', '', name)
-                if channel_name == '':
-                    # ignore empty lines
-                    continue
-                channel_names.append(channel_name)
-            return channel_names
-        
-        channel_names = channel_names_from_input(youtube.get('channel_names', ''))
+        channel_names = parse_channel_names(youtube.get('channel_names', ''))
         importer = YouTubeImporter(auto_publish, user, tags, categories)
         try:
             for channel_name in channel_names:

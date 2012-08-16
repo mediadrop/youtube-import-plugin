@@ -6,6 +6,7 @@
 
 from datetime import datetime
 import logging
+import re
 
 import gdata.youtube.service
 
@@ -17,10 +18,25 @@ from mediacore.model import (Author, Media, MediaFile, fetch_row,
     get_available_slug)
 from mediacore.model.meta import DBSession
 
+
+
+__all__ = ['parse_channel_names', 'YouTubeImporter']
+
 log = logging.getLogger(__name__)
 
 
-__all__ = ['YouTubeImporter']
+def parse_channel_names(channel_string):
+    channel_names = []
+    for name in channel_string.replace(',', ' ').split():
+        # YouTube only allows ASCII letters, digits and dots but other
+        # software might insert invisible characters (e.g. u'\u202a',
+        # unicode "left-to-right embedding").
+        channel_name = re.sub('[^a-zA-Z0-9\.]', '', name)
+        if channel_name == '':
+            # ignore empty lines
+            continue
+        channel_names.append(channel_name)
+    return channel_names
 
 
 class YouTubeImporter(object):
