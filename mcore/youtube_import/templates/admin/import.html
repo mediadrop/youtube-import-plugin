@@ -1,0 +1,33 @@
+<!--!
+    This file is a part of the YouTube Import plugin for MediaCore CE.
+    The source code contained in this file is licensed under the GPL v3 (or at 
+    your option any later version).
+    See LICENSE.txt in the main project directory for more information.
+-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:py="http://genshi.edgewall.org/"
+      xmlns:xi="http://www.w3.org/2001/XInclude"
+      xmlns:i18n="http://genshi.edgewall.org/i18n"
+      i18n:domain="youtube_import">
+<xi:include href="/admin/settings/master.html" />
+<head>
+	<title>YouTube Import</title>
+	<link href="${h.url_for('/admin/styles/forms.css')}" media="screen" rel="stylesheet" type="text/css" />
+</head>
+<body>
+	<div class="box">
+		<div class="box-head">
+			<h1>YouTube Channel Import</h1>
+		</div>
+		<div class="form-save-error"
+			py:if="'_the_form' in tmpl_context.form_errors"
+			py:content="tmpl_context.form_errors['_the_form']">
+			Display import errors
+		</div>
+		<form py:replace="XML(form(form_values, action=form_action, child_args={'youtube.categories': {'category_tree': category_tree}}))" />
+	</div>
+</body>
+</html>
+
