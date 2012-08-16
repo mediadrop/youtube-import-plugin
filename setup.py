@@ -13,9 +13,6 @@ setup(
       packages=find_packages(),
       namespace_packages = ['mcore'],
       include_package_data=True,
-      package_data = {
-          'mcore.youtube_import.templates': ['admin/*'],
-      },
       entry_points = {
           'mediacore.plugin': [
               'youtube_import = mcore.youtube_import.mediacore_plugin',
