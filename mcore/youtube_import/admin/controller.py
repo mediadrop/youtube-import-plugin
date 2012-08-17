@@ -15,7 +15,6 @@ from mediacore.model import Category
 
 from mcore.youtube_import.admin.forms import *
 from mcore.youtube_import.core import parse_channel_names, YouTubeImporter, YouTubeQuotaExceeded
-from mcore.youtube_import.util import _
 
 
 __all__ = ['YouTubeImportController']
