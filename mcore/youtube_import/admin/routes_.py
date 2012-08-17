@@ -9,7 +9,7 @@ from mediacore.lib.i18n import _
 from mediacore.plugin import events
 from mediacore.plugin.events import observes
 
-from mcore.youtube_import.admin.util import gettext_domain
+from mcore.youtube_import.util import gettext_domain
 
 __all__ = []
 
