@@ -191,7 +191,7 @@ class YouTubeImporter(object):
             media_file = add_new_media_file(media, url=player_url)
         except StorageError, e:
             log.debug('Video Feed Error: Error storing video: %s at %s' \
-                % e.message, player_url)
+                % (e.message, player_url))
             return None
         if not has_thumbs(media):
             create_default_thumbs_for(media)
