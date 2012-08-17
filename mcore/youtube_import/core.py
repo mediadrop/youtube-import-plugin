@@ -220,6 +220,13 @@ class ChannelImportState(object):
         self.state['next'] = json_data['next']
         return self
     
+    def to_json(self):
+        return {
+            'processed': list(self.state['processed']),
+            'remaining': list(self.state['remaining']),
+            'next': self.state['next'],
+        }
+    
     def register(self):
         self.importer.add_video_guard(self.should_process_video)
         self.importer.add_video_observer(self.new_video)

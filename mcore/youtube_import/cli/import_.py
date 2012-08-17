@@ -95,7 +95,7 @@ class CommandLineImport(CommandLineTask):
         filename = self.state_filename()
         json_states = {}
         for key, state in states.items():
-            json_states[key] = state.state
+            json_states[key] = state.to_json()
         file(filename, 'wb').write(json.dumps(json_states))
     
     def import_channels(self):
@@ -136,7 +136,7 @@ class CommandLineImport(CommandLineTask):
         print _('Import paused.')
 
 
-def import_command():#
+def import_command():
     youtube = CommandLineImport().init()
     youtube.import_channels()
 
