@@ -1,15 +1,15 @@
-# Translations template for YouTubeImportMC.
+# Translations template for MCYouTubeImport.
 # Copyright (C) 2012 ORGANIZATION
-# This file is distributed under the same license as the YouTubeImportMC
+# This file is distributed under the same license as the MCYouTubeImport
 # project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2012.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: YouTubeImportMC 0.6\n"
+"Project-Id-Version: MCYouTubeImport 0.6\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-08-16 15:18+0200\n"
+"POT-Creation-Date: 2012-08-17 10:54+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.0dev-r0\n"
 
-#: mcore/youtube_import/admin/controller.py:61
+#: mcore/youtube_import/core.py:68
 msgid ""
 "You have exceeded the traffic quota allowed \n"
 "by YouTube. While some of the videos have been saved, not all of them were \n"
@@ -69,5 +69,59 @@ msgstr ""
 #: mcore/youtube_import/templates/admin/import.html:16
 #: mcore/youtube_import/templates/admin/import.html:22
 msgid "YouTube Import"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:26
+msgid "Import YouTube videos into MediaCore"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:43
+msgid "immediately publish imported videos"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:45
+msgid "associate new videos with these tags (comma separated list)"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:47
+msgid "associate new videos with these categories (comma separated list)"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:49
+msgid "MediaCore user name for newly created videos (default: \"admin\")"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:52
+msgid "YouTube channel name (e.g. \"LinuxMagazine\")"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:58
+msgid "Please specify at least one valid channel"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:63
+#, python-format
+msgid "Unknown user \"%(user_name)s\""
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:121
+msgid "Import complete"
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:125
+msgid "Import paused."
+msgstr ""
+
+#: mcore/youtube_import/cli/task.py:38
+msgid "Please specify a config file using \"--config=<filename>\""
+msgstr ""
+
+#: mcore/youtube_import/cli/task.py:53
+msgid "MediaCore config file"
+msgstr ""
+
+#: mcore/youtube_import/cli/task.py:55
+#, python-format
+msgid "MediaCore config file (default: \"%(file)s\")"
 msgstr ""
 

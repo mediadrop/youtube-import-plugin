@@ -1,6 +1,16 @@
 #!/usr/bin/env python
 
+import sys
+
 from setuptools import setup, find_packages
+
+
+dependencies = ['MediaCore >= 0.9.9dev']
+if sys.version_info < (2, 7):
+    dependencies.append('argparse')
+# + MediaCore dependencies
+#    - babel
+#    - simplejson (Python < 2.6)
 
 setup(
     name='MCYouTubeImport',
@@ -13,10 +23,15 @@ setup(
     packages=find_packages(),
     namespace_packages = ['mcore'],
     include_package_data=True,
+    
+    install_requires=dependencies, 
     entry_points = {
         'mediacore.plugin': [
             'youtube_import = mcore.youtube_import.mediacore_plugin',
         ],
+        'console_scripts': [
+            'import-youtube-videos = mcore.youtube_import.cli:import_command',
+        ]
     },
     message_extractors = {'mcore/youtube_import': [
         ('**.py', 'python', None),
