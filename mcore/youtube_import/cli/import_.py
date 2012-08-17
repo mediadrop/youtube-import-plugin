@@ -99,6 +99,12 @@ class CommandLineImport(CommandLineTask):
         file(filename, 'wb').write(json.dumps(json_states))
     
     def import_channels(self):
+        from mediacore.model import DBSession
+        # MediaCore uses '.flush()' but due to different DBSession setup this
+        # will not trigger a commit for command line scripts. Treating 'flush()'
+        # as 'commit()' is not 100% right but works well enough here...
+        DBSession.flush = DBSession.commit
+        
         importer = YouTubeImporter(self.user, self.options.publish, 
                                    self.options.tags, self.options.categories)
         
