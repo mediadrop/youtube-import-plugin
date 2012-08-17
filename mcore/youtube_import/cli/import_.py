@@ -85,8 +85,13 @@ class CommandLineImport(CommandLineTask):
         if not os.path.isfile(filename):
             return {}
         
+        file_content = file(filename, 'rb').read().decode('utf-8')
+        try:
+            json_states = json.loads(file_content)
+        except ValueError:
+            self.delete_state()
+            return {}
         states = {}
-        json_states = json.loads(file(filename, 'rb').read().decode('utf-8'))
         for key, state_data in json_states.items():
             states[key] = ChannelImportState.from_json(importer, state_data)
         return states
