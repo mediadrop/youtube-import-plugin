@@ -63,7 +63,8 @@ class YouTubeImporter(object):
             log.debug('importing videos from YouTube channel %r' % channel_name)
             self._import_channel(channel_name)
         except RequestError, request_error:
-            if request_error.message['status'] != 403:
+            exc_data = request_error.args[0]
+            if exc_data['status'] != 403:
                 raise
             error_message = _(u'''You have exceeded the traffic quota allowed 
 by YouTube. While some of the videos have been saved, not all of them were 
