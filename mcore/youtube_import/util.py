@@ -12,6 +12,4 @@ __all__ = ['_']
 
 gettext_domain = 'youtube_import'
 
-
 _ = lazify(lambda msgid: mcore_ugettext(msgid, domain=gettext_domain))
-

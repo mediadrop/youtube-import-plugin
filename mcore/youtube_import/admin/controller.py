@@ -6,7 +6,6 @@
 
 import logging
 
-from gdata.service import RequestError
 from pylons import request, tmpl_context as c
 
 from mediacore.lib.base import BaseSettingsController
@@ -15,7 +14,7 @@ from mediacore.lib.helpers import redirect, url_for
 from mediacore.model import Category
 
 from mcore.youtube_import.admin.forms import *
-from mcore.youtube_import.core import parse_channel_names, YouTubeImporter
+from mcore.youtube_import.core import parse_channel_names, YouTubeImporter, YouTubeQuotaExceeded
 from mcore.youtube_import.util import _
 
 
@@ -45,18 +44,12 @@ class YouTubeImportController(BaseSettingsController):
         categories = kwargs.get('youtube.categories')
         
         channel_names = parse_channel_names(youtube.get('channel_names', ''))
-        importer = YouTubeImporter(auto_publish, user, tags, categories)
+        importer = YouTubeImporter(user, auto_publish, tags, categories)
         try:
             for channel_name in channel_names:
-                log.debug('importing videos from YouTube channel %r' % channel_name)
                 importer.import_videos_from_channel(channel_name)
-        except RequestError, request_error:
-            if request_error.message['status'] != 403:
-                raise
-            error_message = _(u'''You have exceeded the traffic quota allowed 
-by YouTube. While some of the videos have been saved, not all of them were 
-imported correctly. Please wait a few minutes and run the import again to 
-continue.''')
+        except YouTubeQuotaExceeded, e:
+            error_message = e.args[0]
             c.form_errors['_the_form'] = error_message
             return self.index(youtube=youtube, **kwargs)
         
