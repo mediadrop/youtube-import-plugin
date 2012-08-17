@@ -13,6 +13,7 @@ except ImportError:
     import simplejson as json
 
 from mcore.youtube_import.cli.task import CommandLineTask
+from mcore.youtube_import.cli.progress import CLIProgressReporter
 from mcore.youtube_import.core import (ChannelImportState, parse_channel_names,
     YouTubeQuotaExceeded, YouTubeImporter)
 from mcore.youtube_import.util import _
@@ -101,12 +102,15 @@ class CommandLineImport(CommandLineTask):
         importer = YouTubeImporter(self.user, self.options.publish, 
                                    self.options.tags, self.options.categories)
         
+        print _('Importing...')
         states = self.load_state(importer)
         for name in self.channel_names:
             state = states.get(name, ChannelImportState(importer))
             if state.is_complete():
                 continue
             state.register()
+            progressbar = CLIProgressReporter(importer, label='  '+name+'  ')
+            progressbar.register()
             try:
                 try:
                     importer.import_videos_from_channel(name)
@@ -114,6 +118,7 @@ class CommandLineImport(CommandLineTask):
                     print e.args[0]
                     break
             finally:
+                progressbar.unregister()
                 state.unregister()
                 states[name] = state
         
