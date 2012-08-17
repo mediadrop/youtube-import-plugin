@@ -125,6 +125,7 @@ class CommandLineImport(CommandLineTask):
             try:
                 try:
                     importer.import_videos_from_channel(name)
+                    progressbar.done()
                 except YouTubeQuotaExceeded, e:
                     print e.args[0]
                     break

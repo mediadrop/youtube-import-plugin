@@ -48,10 +48,12 @@ class CLIProgressReporter(object):
         self.importer.add_feed_page_observer(self.new_feed_page)
     
     def unregister(self):
-        if self.progressbar:
-            self.progressbar.finish()
         self.importer.remove_observer(self.new_video)
         self.importer.remove_observer(self.new_feed_page)
+    
+    def done(self):
+        if self.progressbar:
+            self.progressbar.finish()
     
     def new_video(self, youtube_id):
         self.count += 1
