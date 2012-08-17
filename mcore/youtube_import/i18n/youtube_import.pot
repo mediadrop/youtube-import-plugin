@@ -7,9 +7,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MCYouTubeImport 0.6\n"
+"Project-Id-Version: MCYouTubeImport 0.9\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2012-08-17 10:54+0200\n"
+"POT-Creation-Date: 2012-08-17 12:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,12 +18,12 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.0dev-r0\n"
 
-#: mcore/youtube_import/core.py:68
+#: mcore/youtube_import/core.py:69
 msgid ""
-"You have exceeded the traffic quota allowed \n"
-"by YouTube. While some of the videos have been saved, not all of them were \n"
-"imported correctly. Please wait a few minutes and run the import again to \n"
-"continue."
+"You have exceeded the traffic quota allowed by YouTube. \n"
+"While some of the videos have been saved, not all of them were \n"
+"imported correctly. Please wait a few minutes and run the \n"
+"import again to continue."
 msgstr ""
 
 #: mcore/youtube_import/admin/forms.py:28
@@ -71,44 +71,48 @@ msgstr ""
 msgid "YouTube Import"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:26
+#: mcore/youtube_import/cli/import_.py:27
 msgid "Import YouTube videos into MediaCore"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:43
+#: mcore/youtube_import/cli/import_.py:44
 msgid "immediately publish imported videos"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:45
+#: mcore/youtube_import/cli/import_.py:46
 msgid "associate new videos with these tags (comma separated list)"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:47
+#: mcore/youtube_import/cli/import_.py:48
 msgid "associate new videos with these categories (comma separated list)"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:49
+#: mcore/youtube_import/cli/import_.py:50
 msgid "MediaCore user name for newly created videos (default: \"admin\")"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:52
+#: mcore/youtube_import/cli/import_.py:53
 msgid "YouTube channel name (e.g. \"LinuxMagazine\")"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:58
+#: mcore/youtube_import/cli/import_.py:59
 msgid "Please specify at least one valid channel"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:63
+#: mcore/youtube_import/cli/import_.py:64
 #, python-format
 msgid "Unknown user \"%(user_name)s\""
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:121
+#: mcore/youtube_import/cli/import_.py:105
+msgid "Importing..."
+msgstr ""
+
+#: mcore/youtube_import/cli/import_.py:127
 msgid "Import complete"
 msgstr ""
 
-#: mcore/youtube_import/cli/import_.py:125
+#: mcore/youtube_import/cli/import_.py:131
 msgid "Import paused."
 msgstr ""
 

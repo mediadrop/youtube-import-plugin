@@ -19,7 +19,7 @@ from mediacore.model import (Author, Media, MediaFile, fetch_row,
     get_available_slug)
 from mediacore.model.meta import DBSession
 
-
+from mcore.youtube_import.util import _
 
 __all__ = ['parse_channel_names', 'ChannelImportState', 'YouTubeImporter', 
     'YouTubeQuotaExceeded']
@@ -66,11 +66,11 @@ class YouTubeImporter(object):
             exc_data = request_error.args[0]
             if exc_data['status'] != 403:
                 raise
-            error_message = _(u'''You have exceeded the traffic quota allowed 
-by YouTube. While some of the videos have been saved, not all of them were 
-imported correctly. Please wait a few minutes and run the import again to 
-continue.''')
-            raise YouTubeQuotaExceeded(error_message)
+            msg_id = _(u'You have exceeded the traffic quota allowed by YouTube. \n' + \
+                u'While some of the videos have been saved, not all of them were \n' + \
+                u'imported correctly. Please wait a few minutes and run the \n' + \
+                u'import again to continue.')
+            raise YouTubeQuotaExceeded(msg_id)
     
     def add_video_guard(self, callback):
         self._video_guards.append(callback)
