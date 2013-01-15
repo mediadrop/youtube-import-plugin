@@ -1,4 +1,4 @@
-recursive-include mcore/youtube_import *.html
-recursive-include mcore/youtube_import *.pot
-recursive-include mcore/youtube_import *.po
-recursive-include mcore/youtube_import *.mo
+recursive-include mediacoreext/youtube_import *.html
+recursive-include mediacoreext/youtube_import *.pot
+recursive-include mediacoreext/youtube_import *.po
+recursive-include mediacoreext/youtube_import *.mo

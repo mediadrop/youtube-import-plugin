@@ -21,19 +21,19 @@ setup(
     license='GPL v3 or later', # see LICENSE.txt
     
     packages=find_packages(),
-    namespace_packages = ['mcore'],
+    namespace_packages = ['mediacoreext'],
     include_package_data=True,
     
     install_requires=dependencies, 
     entry_points = {
         'mediacore.plugin': [
-            'youtube_import = mcore.youtube_import.mediacore_plugin',
+            'youtube_import = mediacoreext.youtube_import.mediacore_plugin',
         ],
         'console_scripts': [
-            'import-youtube-videos = mcore.youtube_import.cli:import_command',
+            'import-youtube-videos = mediacoreext.youtube_import.cli:import_command',
         ]
     },
-    message_extractors = {'mcore/youtube_import': [
+    message_extractors = {'mediacoreext/youtube_import': [
         ('**.py', 'python', None),
         ('templates/**.html', 'genshi', {'template_class': 'genshi.template.markup:MarkupTemplate'}),
     ]},

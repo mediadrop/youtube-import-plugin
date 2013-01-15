@@ -5,7 +5,7 @@
 # See LICENSE.txt in the main project directory for more information.
 
 # Register admin hooks
-import mcore.youtube_import.admin
+import mediacoreext.youtube_import.admin
 
-__controller__ = mcore.youtube_import.admin.YouTubeImportController
+__controller__ = mediacoreext.youtube_import.admin.YouTubeImportController
 

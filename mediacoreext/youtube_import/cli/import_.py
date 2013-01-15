@@ -12,11 +12,11 @@ try:
 except ImportError:
     import simplejson as json
 
-from mcore.youtube_import.cli.task import CommandLineTask
-from mcore.youtube_import.cli.progress import CLIProgressReporter
-from mcore.youtube_import.core import (ChannelImportState, parse_channel_names,
+from mediacoreext.youtube_import.cli.task import CommandLineTask
+from mediacoreext.youtube_import.cli.progress import CLIProgressReporter
+from mediacoreext.youtube_import.core import (ChannelImportState, parse_channel_names,
     YouTubeQuotaExceeded, YouTubeImporter)
-from mcore.youtube_import.util import _
+from mediacoreext.youtube_import.util import _
 
 
 

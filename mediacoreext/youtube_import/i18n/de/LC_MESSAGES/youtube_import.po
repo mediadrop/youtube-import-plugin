@@ -18,7 +18,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Generated-By: Babel 1.0dev-r0\n"
 
-#: mcore/youtube_import/core.py:69
+#: mediacoreext/youtube_import/core.py:69
 msgid ""
 "You have exceeded the traffic quota allowed by YouTube. \n"
 "While some of the videos have been saved, not all of them were \n"
@@ -29,11 +29,11 @@ msgstr ""
 "Einige Videos wurden gespeichert. Bitte warten Sie ein paar Minuten \n"
 "und starten den Import dann erneut."
 
-#: mcore/youtube_import/admin/forms.py:28
+#: mediacoreext/youtube_import/admin/forms.py:28
 msgid "Channel Name(s)"
 msgstr "Kanal-Name(n)"
 
-#: mcore/youtube_import/admin/forms.py:29
+#: mediacoreext/youtube_import/admin/forms.py:29
 msgid ""
 "One or more channel names (separated by commas) to import. Please enter "
 "only the channel/user name, not the full URL. Please be aware that it may"
@@ -47,11 +47,11 @@ msgstr ""
 "kann. Sobald alle Videos importiert wurden, werden Sie auf die Medien-"
 "Seite weitergeleitet, wo Sie Ihre neuen Videos verwalten können."
 
-#: mcore/youtube_import/admin/forms.py:32
+#: mediacoreext/youtube_import/admin/forms.py:32
 msgid "Publish Videos"
 msgstr "Videos publizieren"
 
-#: mcore/youtube_import/admin/forms.py:33
+#: mediacoreext/youtube_import/admin/forms.py:33
 msgid ""
 "When this is selected, videos are published automatically when they are "
 "imported. Otherwise the videos will be added, but will be waiting for "
@@ -60,82 +60,82 @@ msgstr ""
 "Importierte Videos werden automatisch publiziert. Andernfalls werden die "
 "Videos zwar hinzugefügt, müssen aber vor dem Publizieren noch überprüf"
 
-#: mcore/youtube_import/admin/forms.py:35
+#: mediacoreext/youtube_import/admin/forms.py:35
 msgid "Categories"
 msgstr "Kategorien"
 
-#: mcore/youtube_import/admin/forms.py:37
+#: mediacoreext/youtube_import/admin/forms.py:37
 msgid "Tags"
 msgstr "Tags"
 
-#: mcore/youtube_import/admin/forms.py:38
+#: mediacoreext/youtube_import/admin/forms.py:38
 msgid "e.g.: puppies, great dane, adorable"
 msgstr "z.B. Welpen, Dogge, bezaubernd"
 
-#: mcore/youtube_import/admin/forms.py:39
+#: mediacoreext/youtube_import/admin/forms.py:39
 msgid "Import"
 msgstr "Import"
 
-#: mcore/youtube_import/admin/routes_.py:32
-#: mcore/youtube_import/templates/admin/import.html:16
-#: mcore/youtube_import/templates/admin/import.html:22
+#: mediacoreext/youtube_import/admin/routes_.py:32
+#: mediacoreext/youtube_import/templates/admin/import.html:16
+#: mediacoreext/youtube_import/templates/admin/import.html:22
 msgid "YouTube Import"
 msgstr "YouTube-Import"
 
-#: mcore/youtube_import/cli/import_.py:27
+#: mediacoreext/youtube_import/cli/import_.py:27
 msgid "Import YouTube videos into MediaCore"
 msgstr "Importiert YouTube-Videos in MediaCore"
 
-#: mcore/youtube_import/cli/import_.py:44
+#: mediacoreext/youtube_import/cli/import_.py:44
 msgid "immediately publish imported videos"
 msgstr "importierte Videos sofort publizieren"
 
-#: mcore/youtube_import/cli/import_.py:46
+#: mediacoreext/youtube_import/cli/import_.py:46
 msgid "associate new videos with these tags (comma separated list)"
 msgstr "füge neue Videos zu diesen Tags hinzu (Komma-separierte Liste)"
 
-#: mcore/youtube_import/cli/import_.py:48
+#: mediacoreext/youtube_import/cli/import_.py:48
 msgid "associate new videos with these categories (comma separated list)"
 msgstr "füge neue Videos zu diesen Kategorien hinzu (Komma-separierte Liste)"
 
-#: mcore/youtube_import/cli/import_.py:50
+#: mediacoreext/youtube_import/cli/import_.py:50
 msgid "MediaCore user name for newly created videos (default: \"admin\")"
 msgstr "MediaCore Benutzername für neue Videos (Standard: \"admin\")"
 
-#: mcore/youtube_import/cli/import_.py:53
+#: mediacoreext/youtube_import/cli/import_.py:53
 msgid "YouTube channel name (e.g. \"LinuxMagazine\")"
 msgstr "Name des YouTube-Kanals (z.B. \"LinuxMagazine\")"
 
-#: mcore/youtube_import/cli/import_.py:59
+#: mediacoreext/youtube_import/cli/import_.py:59
 msgid "Please specify at least one valid channel"
 msgstr "Bitte geben Sie mindestens einen gültigen Kanal an."
 
-#: mcore/youtube_import/cli/import_.py:64
+#: mediacoreext/youtube_import/cli/import_.py:64
 #, python-format
 msgid "Unknown user \"%(user_name)s\""
 msgstr "Unbekannter Nutzer \"%(user_name)s\""
 
-#: mcore/youtube_import/cli/import_.py:105
+#: mediacoreext/youtube_import/cli/import_.py:105
 msgid "Importing..."
 msgstr "Importiere..."
 
-#: mcore/youtube_import/cli/import_.py:127
+#: mediacoreext/youtube_import/cli/import_.py:127
 msgid "Import complete"
 msgstr "Import abgeschlossen"
 
-#: mcore/youtube_import/cli/import_.py:131
+#: mediacoreext/youtube_import/cli/import_.py:131
 msgid "Import paused."
 msgstr "Import unterbrochen"
 
-#: mcore/youtube_import/cli/task.py:38
+#: mediacoreext/youtube_import/cli/task.py:38
 msgid "Please specify a config file using \"--config=<filename>\""
 msgstr "Bitte geben Sie die Konfigurationsdatei an (\"--config=<dateiname>\")"
 
-#: mcore/youtube_import/cli/task.py:53
+#: mediacoreext/youtube_import/cli/task.py:53
 msgid "MediaCore config file"
 msgstr "MediaCore Konfigurations-Datei"
 
-#: mcore/youtube_import/cli/task.py:55
+#: mediacoreext/youtube_import/cli/task.py:55
 #, python-format
 msgid "MediaCore config file (default: \"%(file)s\")"
 msgstr "MediaCore Konfigurations-Datei (Standard: \"%(file)s\")"

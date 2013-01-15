@@ -4,4 +4,4 @@
 # your option any later version).
 # See LICENSE.txt in the main project directory for more information.
 
-from mcore.youtube_import.cli.import_ import import_command
+from mediacoreext.youtube_import.cli.import_ import import_command

@@ -13,8 +13,8 @@ from mediacore.lib.decorators import autocommit, expose, validate
 from mediacore.lib.helpers import redirect, url_for
 from mediacore.model import Category
 
-from mcore.youtube_import.admin.forms import *
-from mcore.youtube_import.core import parse_channel_names, YouTubeImporter, YouTubeQuotaExceeded
+from mediacoreext.youtube_import.admin.forms import *
+from mediacoreext.youtube_import.core import parse_channel_names, YouTubeImporter, YouTubeQuotaExceeded
 
 
 __all__ = ['YouTubeImportController']

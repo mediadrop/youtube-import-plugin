@@ -19,7 +19,7 @@ from mediacore.model import (Author, Media, MediaFile, fetch_row,
     get_available_slug)
 from mediacore.model.meta import DBSession
 
-from mcore.youtube_import.util import _
+from mediacoreext.youtube_import.util import _
 
 __all__ = ['parse_channel_names', 'ChannelImportState', 'YouTubeImporter', 
     'YouTubeQuotaExceeded']

@@ -11,7 +11,7 @@ from mediacore.forms import ListFieldSet, ListForm, TextArea, SubmitButton
 from mediacore.forms.admin.categories import CategoryCheckBoxList
 from mediacore.model import Category, DBSession
 
-from mcore.youtube_import.util import _
+from mediacoreext.youtube_import.util import _
 
 __all__ = ['ImportVideosForm']
 

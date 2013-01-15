@@ -12,8 +12,8 @@ import pylons
 
 from mediacore.lib.i18n import Translator
 
-from mcore.youtube_import.cli.set_up import find_config, init_mediacore
-from mcore.youtube_import.util import _
+from mediacoreext.youtube_import.cli.set_up import find_config, init_mediacore
+from mediacoreext.youtube_import.util import _
 
 
 __all__ = ['CommandLineTask']
