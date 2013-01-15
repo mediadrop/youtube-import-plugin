@@ -178,8 +178,7 @@ class YouTubeImporter(object):
         media.reviewed = True
         media.title = unicode(entry.media.title.text, "utf-8")
         if entry.media.description.text:
-            encoded_description = unicode(entry.media.description.text,
-                                        "utf-8")
+            encoded_description = unicode(entry.media.description.text, "utf-8")
             media.description = clean_xhtml(encoded_description)
         media.slug = get_available_slug(Media, media.title, media)
         
