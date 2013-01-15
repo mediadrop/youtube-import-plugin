@@ -3,3 +3,5 @@ dist
 .project
 .pydevproject
 *.state
+*.egg-info
+*.pyc
