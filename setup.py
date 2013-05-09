@@ -9,12 +9,13 @@ import sys
 from setuptools import setup, find_packages
 
 
-dependencies = ['MediaCore >= 0.9.9dev']
+dependencies = [
+    'babel',
+    'MediaCore >= 0.9.9dev',
+    'simplejson',
+]
 if sys.version_info < (2, 7):
     dependencies.append('argparse')
-# + MediaCore dependencies
-#    - babel
-#    - simplejson (Python < 2.6)
 
 setup(
     name='MCYouTubeImport',
