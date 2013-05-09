@@ -19,7 +19,7 @@ if sys.version_info < (2, 7):
 
 setup(
     name='MCYouTubeImport',
-    version='0.9',
+    version='0.10.0',
     
     author='Felix Schwarz',
     author_email='info@schwarz.eu',
