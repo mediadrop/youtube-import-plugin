@@ -11,7 +11,7 @@ from setuptools import setup, find_packages
 
 dependencies = [
     'babel',
-    'MediaCore >= 0.9.9dev',
+    'MediaCore >= 0.10.0b1',
     'simplejson',
 ]
 if sys.version_info < (2, 7):
