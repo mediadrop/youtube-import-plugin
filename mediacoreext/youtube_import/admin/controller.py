@@ -38,7 +38,7 @@ class YouTubeImportController(BaseSettingsController):
     @autocommit
     def perform_import(self, youtube, **kwargs):
         auto_publish = youtube.get('auto_publish', False)
-        user = request.environ['repoze.who.identity']['user']
+        user = request.perm.user
         tags = kwargs.get('youtube.tags')
         categories = kwargs.get('youtube.categories')
         
